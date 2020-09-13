@@ -1,0 +1,36 @@
+.dialogs {
+  display: grid;
+  
+  grid-template-areas: 
+  "d m"
+  "d s";
+  
+  grid-template-columns: 2fr 10fr;
+  grid-gap: 60px;
+}
+.dialogsItem {
+grid-area: d;
+}
+.messages{
+  grid-area: m;
+}
+.addmessage{
+  grid-area: s;
+  align-self: end;
+  display: grid;
+  grid-template-columns: 6fr 4fr;
+}
+.addmessage button {
+  width: 135px;
+  height: 35px;
+  justify-self: start;
+  border-radius: 10px;
+}
+.addmessage textarea {
+  width: 450px;
+  height: 35px;
+  background-color: #fff;
+  border: 1px #304040 solid;
+  border-radius: 10px;
+  resize: none;
+}

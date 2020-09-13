@@ -1,0 +1,13 @@
+.nav {
+  grid-area: n;
+  background-color: #304040;
+}
+
+.item {
+  margin: 10px 40px;
+}
+
+.item .activeLink {
+ color: rgb(252, 227, 88);
+}
+ 

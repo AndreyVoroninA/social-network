@@ -1,0 +1,18 @@
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a.activeLink {
+  color: gold;
+}
+
+.dialog {
+  font-size: 20px;
+}
+
+.avaDialog {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}

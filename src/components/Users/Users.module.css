@@ -1,0 +1,12 @@
+.photo {
+   max-width: 50px;
+   max-height: 70px;
+}
+
+.numPage {
+ font-weight: bold;
+}
+
+.selectPage {
+   margin: 15px;
+}

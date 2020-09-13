@@ -1,0 +1,17 @@
+.item {
+  color: rgb(12, 243, 231);
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.item img {
+  width: 50px;
+  height: 50px;
+  border-radius: 30px;
+}
+
+.likesCount {
+  position: absolute;
+  left: 60%;
+  color: rgb(255, 248, 247);
+}

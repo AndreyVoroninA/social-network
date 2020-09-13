@@ -1,0 +1,22 @@
+.header {
+  grid-area: h;
+  background-color: #04202C;
+  padding: 10px;
+}
+
+.header img {
+  height: 60px;
+  width: 60px;
+}
+
+.headerContent {
+  display: grid;
+  grid-template-columns: 2fr 8fr;
+}
+
+.headerContent div {
+  color: #fff;
+  margin-left: 90%;
+  font-size: 12px;
+}
+
