@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import initAva from '../../assets/images/initialAva.jpg';
 import s from './Users.module.css';
 
@@ -25,7 +26,9 @@ const Users = (props) => {
       {
       
          props.users.map((u) =>  (<div key={u.id}>
+         <NavLink to={'/profile/' + u.id}>
          <img src={u.photos.small != null ? u.photos.small : initAva } className={s.photo} ></img>
+         </NavLink>
          <div>{u.name}</div>
          <div>{u.status}</div>
          <div>{/*u.location.country*/}</div> 

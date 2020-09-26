@@ -1,7 +1,11 @@
 import React from "react";
+import Preloader from "../../common/Preloader/Preloader";
 import s from "./ProfileInfo.module.css";
 
-const ProfileInfo = () => {
+const ProfileInfo = (props) => {
+   if (!props.profile) {
+      return <Preloader />
+   }
    return (
       <div>
          <div>
@@ -14,11 +18,22 @@ const ProfileInfo = () => {
          <div className={s.profileInfo}>
             <div >
                <img className={s.avaImg}
-               src="https://desifre.net/wp-content/uploads/2019/12/Led-Mask-Style-Full-HD-Wallpaper-Mobile-4.jpg"/>
+               src={props.profile.photos.large}/>
             </div>
             <div className={s.des}>
-               Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat omnis fugiat vitae in deserunt odio atque? Corporis ipsam asperiores ab repellat voluptas dolore quo ex repudiandae eius enim delectus quam, labore possimus numquam quasi neque corrupti veritatis voluptatem. Perspiciatis necessitatibus molestias dignissimos voluptatibus rerum! Minima sapiente illum numquam provident. Ex veritatis labore incidunt illum, voluptas mollitia placeat aut ad nam, iste aliquam enim quo! Molestias totam tenetur perspiciatis quibusdam consequuntur animi ullam cum quos dolores temporibus nesciunt eos soluta dolorum reprehenderit exercitationem eius inventore nobis suscipit, repellendus quam? Impedit dolores, id expedita sunt eum quam in natus aliquid dolorem quidem.
-               
+            <div className={s.name}>{props.profile.fullName}</div>
+               <div className={s.aboutMe}>{props.profile.aboutMe}</div>
+               <div>Мои контакты:
+               <div className={s.desItem1}>{props.profile.contacts.facebook}</div> 
+               <div className={s.desItem2}>{props.profile.contacts.website} </div>
+               <div className={s.desItem3}>{props.profile.contacts.vk}</div>
+               <div className={s.desItem4}>{props.profile.contacts.twitter}</div>
+               <div className={s.desItem5}>{props.profile.contacts.instagram}</div>
+               <div className={s.desItem6}>{props.profile.contacts.youtube}</div>
+               <div className={s.desItem7}>{props.profile.contacts.github}</div>
+               <div className={s.desItem8}>{props.profile.contacts.mainLink}</div>
+               <div>Работа: <div className={s.desItem9}>{props.profile.lookingForAJobDescription}</div></div>
+               </div>
             </div>
          </div>
       </div>

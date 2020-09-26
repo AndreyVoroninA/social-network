@@ -20,5 +20,20 @@
 
 .des {
   margin: 10px;
-  color: rgb(248, 232, 8);
 }
+.name {
+  font-size: 24px;
+  font-weight: 600;
+}
+.aboutMe {
+color: #ffd900;
+}
+.desItem1 {color: #d4bb2e;}
+.desItem2 {color:#a59226;}
+.desItem3 {color: #ffd900;}
+.desItem4 {color:rgb(215, 236, 27);}
+.desItem5 {color:#ffd900;}
+.desItem6 {color: #a79845;}
+.desItem7 {color:#bfca1f;}
+.desItem8 {color:#ccb742;}
+.desItem9 {color:#ceb62e;}
