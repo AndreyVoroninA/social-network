@@ -9,13 +9,14 @@ import Settings from "./components/Settings/Settings";
 import UsersContainer from "./components/Users/UsersContainer";
 import NewsContainer from "./components/News/NewsContainer";
 import ProfileContiner from "./components/Profile/ProfileContainer";
+import HeaderContainer from './components/Header/HeaderContainer'
 
 const App = (props) => {
   return (
     <BrowserRouter>
     <div className="colorPage">
       <div className="app-wrapper">
-        <Header />
+        <HeaderContainer />
         <Navbar />
         <div className="app-wrapper-content">
           <Route

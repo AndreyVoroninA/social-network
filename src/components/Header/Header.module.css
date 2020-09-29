@@ -10,13 +10,15 @@
 }
 
 .headerContent {
-  display: grid;
-  grid-template-columns: 2fr 8fr;
+  display: flex;
+  justify-content: space-between;
 }
 
-.headerContent div {
+.logo {
   color: #fff;
-  margin-left: 90%;
   font-size: 12px;
 }
-
+.login {
+  color: #fff;
+  text-decoration: none;
+}
