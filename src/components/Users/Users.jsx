@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import initAva from '../../assets/images/initialAva.jpg';
 import s from './Users.module.css';
+import {UsersAPI} from './../../api/api';
 
 const Users = (props) => {
 
@@ -34,8 +35,22 @@ const Users = (props) => {
          <div>{/*u.location.country*/}</div> 
          <div>{/*u.location.city*/}</div> 
          <div>
-         {u.followed ? <button onClick={() => (props.unfollow(u.id))}>follow</button> 
-                     : <button onClick={() => (props.follow(u.id))}>unfollow</button>}
+         {u.followed ? <button onClick={() => (
+            UsersAPI.deleteUsers(u.id).then(data =>
+            { if (data.resultCode == 0) {
+                     props.unfollow(u.id)
+                  }
+            })
+            
+            )}>follow</button> 
+                     : <button onClick={() => (           
+               UsersAPI.postUsers(u.id).then(data =>
+            {
+                  if (data.resultCode == 0) {
+                     props.follow(u.id)
+                  }
+               })
+                        )}>unfollow</button>}
          </div>
       </div>)
       )
