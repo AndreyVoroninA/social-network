@@ -35,22 +35,27 @@ const Users = (props) => {
          <div>{/*u.location.country*/}</div> 
          <div>{/*u.location.city*/}</div> 
          <div>
-         {u.followed ? <button onClick={() => (
+         {u.followed ? <button disabled={props.followingInPropgress.some(id => id === u.id)} onClick={() => {
+            debugger;
+            props.toggleFollowingProgress(true, u.id);
             UsersAPI.deleteUsers(u.id).then(data =>
             { if (data.resultCode == 0) {
                      props.unfollow(u.id)
                   }
+                  props.toggleFollowingProgress(false, u.id);
             })
             
-            )}>follow</button> 
-                     : <button onClick={() => (           
+         }}>follow</button> 
+                     : <button disabled={props.followingInPropgress.some(id => id === u.id)} onClick={() => {   
+                        props.toggleFollowingProgress(true, u.id);        
                UsersAPI.postUsers(u.id).then(data =>
             {
                   if (data.resultCode == 0) {
                      props.follow(u.id)
                   }
+                  props.toggleFollowingProgress(false, u.id);
                })
-                        )}>unfollow</button>}
+         }}>unfollow</button>}
          </div>
       </div>)
       )
