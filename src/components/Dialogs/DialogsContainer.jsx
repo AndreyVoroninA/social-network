@@ -4,6 +4,7 @@ import {actionCreateAddMessage, actionCreateUpdateNewMesText} from "./../../redu
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
 import { WithAuthRedirect } from "../../hoc/WithAuthRedirect";
+import { compose } from "redux";
 
 let mapStateToProps = (state) => {
   return {
@@ -18,8 +19,8 @@ let mapDispatchToProps = (dispatch) => {
     updateNewMesText: (text) => {dispatch(actionCreateUpdateNewMesText(text))}
   }
 }
-let AuthRedirectComponent = WithAuthRedirect(Dialogs);
 
-const DialogsContainer = connect(mapStateToProps, mapDispatchToProps)(AuthRedirectComponent);
-
-export default DialogsContainer;
+export default compose(
+  connect(mapStateToProps, mapDispatchToProps),
+  WithAuthRedirect
+)(Dialogs)
