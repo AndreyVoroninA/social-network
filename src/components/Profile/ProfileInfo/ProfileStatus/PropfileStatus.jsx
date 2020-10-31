@@ -1,4 +1,5 @@
 import React from "react";
+import s from './PropfileStatus.module.css';
 
 class ProfileStatus extends React.Component {
 
@@ -23,9 +24,14 @@ class ProfileStatus extends React.Component {
          status: e.currentTarget.value
       })
    }
+   componentDidUpdate(prevProps, prevState) {
+      if (prevProps.status !== this.props.status) {
+         this.setState ({ status: this.props.status })
+      }
+   }
    render() {
       return (
-         <div>
+         <div class={s.block}>
             {!this.state.editMode &&
                <div>
                   <span onDoubleClick={this.activatedEditMode}>{this.props.status || 'Add status?'}</span>

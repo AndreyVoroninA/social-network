@@ -1,0 +1,14 @@
+.block {
+   margin: 5px 10px;
+   font-family: 'Syne Tactile', cursive;
+   font-size: 20px;
+   font-weight: 500;
+}
+input {
+   outline: none;
+   background-color: rgb(240, 240, 169);
+   border-radius: 10px;
+   width: 180px;
+   height: 20px;
+
+}
