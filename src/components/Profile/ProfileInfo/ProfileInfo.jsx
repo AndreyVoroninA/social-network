@@ -1,6 +1,7 @@
 import React from "react";
 import Preloader from "../../common/Preloader/Preloader";
 import s from "./ProfileInfo.module.css";
+import ProfileStatus from "./ProfileStatus/PropfileStatus";
 
 const ProfileInfo = (props) => {
    if (!props.profile) {
@@ -35,6 +36,7 @@ const ProfileInfo = (props) => {
                <div>Работа: <div className={s.desItem9}>{props.profile.lookingForAJobDescription}</div></div>
                </div>
             </div>
+            <ProfileStatus status={props.status} updateStatus={props.updateStatus} />
          </div>
       </div>
    );
