@@ -12,3 +12,14 @@ export const Textarea = ({input, meta,...props}) => {
       </div>
    )
 }
+export const Input = ({input, meta,...props}) => {
+   const hasError = meta.touched && meta.error
+   return (
+      <div className={s.block}>
+         <input {...input} {...props} className={s.addPost + " " + (hasError ? s.error : " ")}></input>
+         <div>
+           {(hasError) ? <div className={s.errorBlock}>{meta.error}</div> : ""}
+         </div>
+      </div>
+   )
+}

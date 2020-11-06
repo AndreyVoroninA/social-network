@@ -1,3 +1,4 @@
+import { stopSubmit } from 'redux-form';
 import {AuthAPI} from './../api/api';
 const SET_USER_DATA = 'SET_USER_DATA';
 
@@ -36,12 +37,17 @@ export const authUsersThunk = () => (dispatch) => {
 }
 
 export const loginThunk = (email, password, rememberMe) => (dispatch) => {
+   
+   
    AuthAPI.login(email, password, rememberMe).then(response =>
       {
         if (response.data.resultCode === 0) {
            dispatch(authUsersThunk());
+        } else {
+           let message = response.data.messages.length > 0 ? response.data.messages[0] : "Error/are you a hacker?";
+         dispatch(stopSubmit("login", {_error: message}));
         }
-      })
+      });
 }
 export const logoutThunk = () => (dispatch) => {
    AuthAPI.logout().then(response => 
