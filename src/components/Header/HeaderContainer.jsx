@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import Header from "./Header";
 import s from "./Header.module.css";
 import { connect } from "react-redux";
-import {authUsersThunk} from './../../redux/auth-reducer';
+import {authUsersThunk, logoutThunk} from './../../redux/auth-reducer';
 import {AuthAPI} from './../../api/api';
 
 class HeaderContainer extends React.Component {
@@ -22,4 +22,4 @@ let mapStateToProps = (state) => ({
    login: state.auth.login
 });
 
-export default connect(mapStateToProps, {authUsersThunk})(HeaderContainer);
+export default connect(mapStateToProps, {authUsersThunk, logoutThunk})(HeaderContainer);

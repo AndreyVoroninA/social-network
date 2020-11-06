@@ -1,10 +1,16 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 import {Field, reduxForm} from "redux-form";
+import {loginThunk} from './../../redux/auth-reducer';
 
 const Login = (props) => {
 
    const onSubmit = (formData) => {
-      console.log(formData);
+      props.loginThunk(formData.email, formData.password, formData.rememberMe);
+   }
+   if (props.isAuth) {
+     return <Redirect to="/profile"/>
    }
 
    return <div>
@@ -17,10 +23,10 @@ const LoginForm = (props) => {
 return (
    <form onSubmit={props.handleSubmit}>
          <div>
-            <Field placeholder={"Login"} component={"input"} name={"login"}></Field>
+            <Field placeholder={"Email"} component={"input"} name={"email"}></Field>
          </div>
         <div>
-          <Field placeholder={"Password"} component={"input"} name={"password"}></Field>
+          <Field placeholder={"Password"} component={"input"} name={"password"} type={"password"}></Field>
        </div>
          <div>
            <Field type={"checkbox"} component={"input"} name={"rememberMe"}></Field><span>remember me</span>
@@ -33,4 +39,7 @@ return (
 
     const LoginReduxForm = reduxForm({form: 'login'})(LoginForm)
 
-export default Login;
+    const mapStateToProps = (state) => ({
+       isAuth: state.auth.isAuth
+    })
+export default connect(mapStateToProps, {loginThunk})(Login);

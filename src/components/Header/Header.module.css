@@ -23,3 +23,17 @@
   color: #fff;
   text-decoration: none;
 }
+.but {
+  width: 100px;
+  height: 23px;
+  color: white;
+  font-size: 14px;
+  background-color: rgb(89, 92, 99);
+  border: 0px;
+  border-radius: 20px;
+  margin-top: 5px;
+}
+.but:hover {
+  background-color: rgb(142, 142, 148);
+  outline: none;
+}
